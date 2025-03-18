@@ -86,6 +86,7 @@
             triangleButton1.TabIndex = 0;
             triangleButton1.UseVisualStyleBackColor = false;
             triangleButton1.Click += triangleButton1_Click;
+            triangleButton1.Cursor = Cursors.Hand;
             // 
             // ActivityCard
             // 

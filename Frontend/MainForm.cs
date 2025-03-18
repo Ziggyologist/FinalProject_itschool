@@ -16,7 +16,7 @@ namespace Frontend
             PopulateUI();
         }
 
-        private void PopulateUI()
+        public void PopulateUI()
         {
             flowLayoutPanel1.Controls.Clear();
             foreach (var item in Helper.ActivityList)
@@ -24,9 +24,11 @@ namespace Frontend
                 ActivityCard card = new ActivityCard(item);
                 card.Dock = DockStyle.Top;
                 card.Height = 100;
-                card.DoClick += OnContactCardClick; card.Padding = new Padding(32, 0, 0, 0);
+                card.DoClick += OnContactCardClick; 
+                card.Padding = new Padding(32, 0, 0, 0);
                 flowLayoutPanel1.Controls.Add(card);
             }
+            if (flowLayoutPanel1.Controls.Count == 0) return;
             flowLayoutPanel1.Controls[0].Dock = DockStyle.None;
             UpdateFlowControlsWidth();
         }
@@ -47,13 +49,6 @@ namespace Frontend
                 PopulateUI();
             }
         }
-
-        //protected override void OnResize(EventArgs e)
-        //{
-        //    base.OnResize(e);
-
-        //    UpdateFlowControlsWidth();
-        //}
 
         private void AddActivityBtn_Click(object sender, EventArgs e)
         {

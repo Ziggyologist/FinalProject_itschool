@@ -20,6 +20,7 @@ namespace Frontend
 
         private static void PopulateMockupData()
         {
+
             Helper.AddNewActivity("Wash the floor", "The floor is very dirty, the floor is lava", 6);
             Helper.AddNewActivity("Water the plants", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nulla consectetur, tellus vitae convallis eleifend, orci risus iaculis magna, sed elementum orci ipsum sed odio. Nulla in eros turpis. Aliquam felis massa, luctus at imperdiet sed, fermentum condimentum enim.", 3);
         }

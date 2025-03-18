@@ -1,4 +1,5 @@
 ﻿using Backend;
+using System.Text;
 using System.Xml;
 
 namespace Frontend
@@ -16,12 +17,11 @@ namespace Frontend
         public ActivityCard(Activity activity)
         {
             InitializeComponent();
-
-            //label1.Click += (s, e) => OnClick(e);
-
             Activity = activity;
-
             UpdateUI();
+
+            // Attach the MouseDown event for right-click detection on label1
+            label1.MouseDown += label1_MouseDown;  // Attach MouseDown event for label1
         }
         protected override void OnClick(EventArgs e)
         {
@@ -59,6 +59,37 @@ namespace Frontend
         {
             //triangleButton1.ForeColor = Color.LightGreen;
             triangleButton1.Cursor = Cursors.Hand;
+        }
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                StringBuilder activitiesList = new StringBuilder();
+
+                foreach (var activity in Helper.ActivityList)
+                {
+                    activitiesList.AppendLine(activity.Name);
+                }
+                string message = $"These are the current activities in the list:\n{activitiesList.ToString()}\n\n" +
+                         $"Are you sure you want to delete \"{Activity.Name}\"? If yes, press OK. Otherwise, press Cancel.";
+                DialogResult result = MessageBox.Show(message, "Confirm Deletion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
+                {
+                    // Delete the activity
+                    Helper.DeleteActivity(Activity.Name);
+
+                    // Refresh the UI to reflect the updated list
+                    var mainForm = this.FindForm() as MainForm;
+                    if (mainForm != null)
+                    {
+                        mainForm.PopulateUI(); 
+                    }
+                }
+                else
+                {
+                    return;
+                }
+            }
         }
     }
 }

@@ -19,13 +19,13 @@ namespace Frontend
 
         private void InitializeComponent()
         {
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.Size = new Size(800, 500);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             flowLayoutPanel1 = new FlowLayoutPanel();
             AddActivityBtn = new Label();
             panel1 = new Panel();
+            label2 = new Label();
+            label1 = new Label();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -57,16 +57,44 @@ namespace Frontend
             AddActivityBtn.TabIndex = 5;
             AddActivityBtn.Text = "+";
             AddActivityBtn.TextAlign = ContentAlignment.MiddleCenter;
+            AddActivityBtn.Cursor = Cursors.Hand;
             AddActivityBtn.Click += AddActivityBtn_Click;
+
             // 
             // panel1
             // 
             panel1.BackColor = Color.LightGray;
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(0, 410);
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 40);
             panel1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Font = new Font("Rockwell", 13F, FontStyle.Bold);
+            label2.ForeColor = Color.WhiteSmoke;
+            label2.Location = new Point(308, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(165, 22);
+            label2.TabIndex = 0;
+            label2.Text = "HABIT TRACKER";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Location = new Point(362, 16);
+            label1.Name = "label1";
+            label1.Size = new Size(47, 15);
+            label1.TabIndex = 0;
+            label1.Text = "HABITS";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -76,8 +104,12 @@ namespace Frontend
             Controls.Add(flowLayoutPanel1);
             Controls.Add(panel1);
             Controls.Add(AddActivityBtn);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "MainForm";
-            Text = "Form1";
+            Text = "Organizeaza-ti ziua cu un cerb!";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -87,6 +119,8 @@ namespace Frontend
         private Panel panel1;
         //private Panel CenteringPanel;
         private Label AddActivityBtn;
+        private Label label1;
+        private Label label2;
     }
 
 }
