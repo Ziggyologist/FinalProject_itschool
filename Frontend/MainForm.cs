@@ -12,7 +12,6 @@ namespace Frontend
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-
             PopulateUI();
         }
 

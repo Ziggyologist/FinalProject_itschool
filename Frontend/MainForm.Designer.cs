@@ -117,7 +117,6 @@ namespace Frontend
 
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel1;
-        //private Panel CenteringPanel;
         private Label AddActivityBtn;
         private Label label1;
         private Label label2;

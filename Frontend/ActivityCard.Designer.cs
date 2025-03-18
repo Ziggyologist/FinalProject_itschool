@@ -49,7 +49,7 @@
             // 
             // label3
             // 
-            label3.Location = new Point(124, 39);
+            label3.Location = new Point(124, 48);
             label3.MaximumSize = new Size(600, 50);
             label3.Name = "label3";
             label3.Size = new Size(600, 45);
@@ -59,7 +59,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(124, 24);
+            label2.Location = new Point(124, 33);
             label2.Name = "label2";
             label2.Size = new Size(45, 15);
             label2.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label1.Location = new Point(124, 3);
+            label1.Location = new Point(124, 12);
             label1.Name = "label1";
             label1.Size = new Size(53, 21);
             label1.TabIndex = 1;
@@ -77,16 +77,18 @@
             // 
             // triangleButton1
             // 
+            triangleButton1.AssociatedActivity = null;
             triangleButton1.BackColor = Color.Transparent;
+            triangleButton1.Cursor = Cursors.Hand;
             triangleButton1.FlatAppearance.BorderSize = 0;
             triangleButton1.FlatStyle = FlatStyle.Flat;
+            triangleButton1.isGray = false;
             triangleButton1.Location = new Point(11, 3);
             triangleButton1.Name = "triangleButton1";
             triangleButton1.Size = new Size(107, 89);
             triangleButton1.TabIndex = 0;
             triangleButton1.UseVisualStyleBackColor = false;
             triangleButton1.Click += triangleButton1_Click;
-            triangleButton1.Cursor = Cursors.Hand;
             // 
             // ActivityCard
             // 

@@ -8,15 +8,11 @@ namespace Frontend
         internal string Description = string.Empty;
         internal int Priority = 0;
         //internal bool Done = false;
-
-        //private bool _updateActivity;
         private readonly Activity? _targetActivity = null;
 
         public AddActivityForm()
         {
             InitializeComponent();
-
-            // _updateActivity = false;
             Text = "Create New Activity";
             TitleLabel.Text = Text;
         }
@@ -24,8 +20,6 @@ namespace Frontend
         public AddActivityForm(Activity activity) : this()
         {
             _targetActivity = activity;
-            //_updateActivity = true;
-
             textBox1.Text = _targetActivity.Name;
             richTextBox1.Text = _targetActivity.Description;
             numericUpDown1.Value = _targetActivity.Priority;
@@ -51,12 +45,6 @@ namespace Frontend
             Description = richTextBox1.Text;
             Priority = (Int32)numericUpDown1.Value;
             //Done = checkBox1.Checked;
-
-            //if(_updateActivity)
-            //{
-            //    _targetActivity?.MarkAsDone(Done);
-            //    Helper.Sort();
-            //}
             DialogResult = DialogResult.OK;
         }
 

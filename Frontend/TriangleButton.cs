@@ -56,7 +56,9 @@ namespace Frontend
                     AssociatedActivity.MarkAsDone(!isGray);
                 }
                 this.Invalidate();
-                MessageBox.Show($"Activity \"{AssociatedActivity?.Name}\" was marked as DONE!");
+            string doneStatus = isGray ? "NOT DONE" : "DONE";
+            MessageBox.Show($"Activity \"{AssociatedActivity?.Name}\" was marked as {doneStatus}!");
+
             }
     }
 }
