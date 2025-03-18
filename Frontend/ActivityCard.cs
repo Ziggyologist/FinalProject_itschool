@@ -19,9 +19,10 @@ namespace Frontend
             InitializeComponent();
             Activity = activity;
             UpdateUI();
-
-            // Attach the MouseDown event for right-click detection on label1
-            label1.MouseDown += label1_MouseDown;  // Attach MouseDown event for label1
+            
+            label1.MouseDown += label1_MouseDown;
+            triangleButton1.AssociatedActivity = Activity;
+            triangleButton1.InitializeState();
         }
         protected override void OnClick(EventArgs e)
         {
@@ -47,12 +48,9 @@ namespace Frontend
 
         }
 
+
         private void triangleButton1_Click(object sender, EventArgs e)
         {
-            if (sender is TriangleButton button)
-            {
-                Helper.SetDone(Activity, !button.isGray);
-            }
         }
 
         private void triangleButton1_MouseEnter(object sender, EventArgs e)
@@ -62,33 +60,26 @@ namespace Frontend
         }
         private void label1_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Left)
             {
                 StringBuilder activitiesList = new StringBuilder();
 
-                foreach (var activity in Helper.ActivityList)
+                foreach (Activity activity in Helper.ActivityList)
                 {
-                    activitiesList.AppendLine(activity.Name);
+                    activitiesList.AppendLine($"{activity.Name} (Done: {activity.Done})");
                 }
                 string message = $"These are the current activities in the list:\n{activitiesList.ToString()}\n\n" +
-                         $"Are you sure you want to delete \"{Activity.Name}\"? If yes, press OK. Otherwise, press Cancel.";
+                                 $"Are you sure you want to delete \"{Activity.Name}\"? If yes, press OK. Otherwise, press Cancel.";
+
                 DialogResult result = MessageBox.Show(message, "Confirm Deletion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
                 if (result == DialogResult.OK)
                 {
-                    // Delete the activity
                     Helper.DeleteActivity(Activity.Name);
-
-                    // Refresh the UI to reflect the updated list
                     var mainForm = this.FindForm() as MainForm;
-                    if (mainForm != null)
-                    {
-                        mainForm.PopulateUI(); 
-                    }
+                    if (mainForm != null) mainForm.PopulateUI();
                 }
-                else
-                {
-                    return;
-                }
+                else return;
             }
         }
     }
