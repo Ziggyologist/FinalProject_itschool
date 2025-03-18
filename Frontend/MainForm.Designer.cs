@@ -19,6 +19,9 @@ namespace Frontend
 
         private void InitializeComponent()
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Size = new Size(800, 500);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             flowLayoutPanel1 = new FlowLayoutPanel();
             AddActivityBtn = new Label();

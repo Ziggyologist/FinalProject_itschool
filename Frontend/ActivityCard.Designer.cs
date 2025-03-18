@@ -49,18 +49,17 @@
             // 
             // label3
             // 
-            label3.Location = new Point(124, 45);
-            label3.MaximumSize = new Size(400, 50);
+            label3.Location = new Point(124, 39);
+            label3.MaximumSize = new Size(600, 50);
             label3.Name = "label3";
-            label3.Size = new Size(400, 45);
+            label3.Size = new Size(600, 45);
             label3.TabIndex = 3;
             label3.Text = "description";
-            label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(124, 30);
+            label2.Location = new Point(124, 24);
             label2.Name = "label2";
             label2.Size = new Size(45, 15);
             label2.TabIndex = 2;
@@ -69,9 +68,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(124, 15);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label1.Location = new Point(124, 3);
             label1.Name = "label1";
-            label1.Size = new Size(37, 15);
+            label1.Size = new Size(53, 21);
             label1.TabIndex = 1;
             label1.Text = "name";
             // 

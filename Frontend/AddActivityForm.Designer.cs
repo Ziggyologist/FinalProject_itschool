@@ -173,7 +173,7 @@ namespace Frontend
             // richTextBox1
             // 
             richTextBox1.Location = new Point(210, 108);
-            richTextBox1.MaxLength = 210;
+            richTextBox1.MaxLength = 300;
             richTextBox1.Name = "richTextBox1";
             richTextBox1.Size = new Size(277, 96);
             richTextBox1.TabIndex = 3;
