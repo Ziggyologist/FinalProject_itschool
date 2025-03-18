@@ -1,6 +1,7 @@
 # FinalProject
 
 #Documentatie de design
+
 template initial: https://ziggyologist.github.io/MoodTrackerApp/habit_page.html
 Avand in vedere ca aplicatia de Windows Forms are scopuri diferite fata de cea realizata in React.js, am adaptat designul pentru a se alinia noilor cerinte. Activitatile nu mai sunt organizate dupa data, ci in functie de prioritate. De asemenea, din cauza limitarilor de timp si a imposibilitatii de a lucra cu fisiere SVG, am fost nevoita sa fac modificari si sa utilizez alte imagini. Am pastrat culorile din designul initial: #96645d, #e3bfba si #c2c2c2, precum si tema naturii (muntii, cerbul).
 Alte elemente de design: Activitatile se marcheaza ca facute sau nefacute prin schimbarea culorii triunghiului din gri in verde. Butoanele au un efect de hover ca pointer. S-a luat decizia de a da dimensiuni standard aplicatiei, atat din motive de design, cat si de functionalitate.
