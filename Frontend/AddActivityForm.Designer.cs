@@ -198,7 +198,8 @@ namespace Frontend
             // 
             // panel3
             // 
-            panel3.BackColor = SystemColors.ControlDark;
+            Color greenColor = ColorTranslator.FromHtml("#70a089");
+            panel3.BackColor = greenColor;
             panel3.BackgroundImageLayout = ImageLayout.Center;
             panel3.Controls.Add(label5);
             panel3.Location = new Point(-1, 1);

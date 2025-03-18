@@ -9,6 +9,7 @@ namespace Frontend
         public readonly Activity Activity;
 
         public event EventHandler DoClick;
+        private ToolTip deleteToolTip = new ToolTip();
         public ActivityCard()
         {
             InitializeComponent();
@@ -19,7 +20,9 @@ namespace Frontend
             InitializeComponent();
             Activity = activity;
             UpdateUI();
-            
+
+            deleteToolTip.SetToolTip(label1, "Click here to delete an activity.");
+
             label1.MouseDown += label1_MouseDown;
             triangleButton1.AssociatedActivity = Activity;
             triangleButton1.InitializeState();
@@ -55,7 +58,6 @@ namespace Frontend
 
         private void triangleButton1_MouseEnter(object sender, EventArgs e)
         {
-            //triangleButton1.ForeColor = Color.LightGreen;
             triangleButton1.Cursor = Cursors.Hand;
         }
         private void label1_MouseDown(object sender, MouseEventArgs e)

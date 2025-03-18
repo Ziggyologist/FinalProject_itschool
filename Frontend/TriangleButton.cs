@@ -9,6 +9,8 @@ namespace Frontend
     {
         public bool isGray { get; set; }
         public Activity AssociatedActivity { get; set; }
+        ToolTip markAsDoneToolTip = new ToolTip();
+
 
         public TriangleButton()
         {
@@ -48,19 +50,25 @@ namespace Frontend
             g.DrawString(this.Text, this.Font, Brushes.Black, new RectangleF(0, 0, this.Width, this.Height), stringFormat);
         }
 
-            protected override void OnClick(EventArgs e)
+        protected override void OnClick(EventArgs e)
+        {
+            base.OnClick(e);
+            isGray = !isGray;
+
+            if (AssociatedActivity != null)
             {
-                base.OnClick(e);
-                isGray = !isGray;
-
-                if (AssociatedActivity != null)
-                {
-                    AssociatedActivity.MarkAsDone(!isGray);
-                }
-                this.Invalidate();
-            string doneStatus = isGray ? "NOT DONE" : "DONE";
-            MessageBox.Show($"Activity \"{AssociatedActivity?.Name}\" was marked as {doneStatus}!");
-
+                AssociatedActivity.MarkAsDone(!isGray);
             }
+            this.Invalidate();
+        string doneStatus = isGray ? "NOT DONE" : "DONE";
+        MessageBox.Show($"Activity \"{AssociatedActivity?.Name}\" was marked as {doneStatus}!");
+
+        }
+
+        protected override void OnMouseEnter(EventArgs e)
+        {
+            base.OnMouseEnter(e);
+            markAsDoneToolTip.SetToolTip(this, "Click here to mark an activity as done.");
+        }
     }
 }
