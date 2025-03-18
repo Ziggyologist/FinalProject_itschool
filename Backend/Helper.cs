@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +14,6 @@ namespace Backend
         public static Activity AddNewActivity(string name, string description = "", int priority = 0, bool done = false)
         {
             Activity activity = CreateActivity(name, description, priority, done);
-            //_activities.Add(activity);
             return activity;
         }
 
@@ -50,6 +49,16 @@ namespace Backend
         public static Activity SetDone(this Activity activity, bool done)
         {
             return activity.MarkAsDone(done);
+        }
+
+        public static void DeleteActivity(string activityName)
+        {
+            var activityToDelete = _activities.FirstOrDefault(a => a.Name == activityName);
+
+            if (activityToDelete != null)
+            {
+                _activities.Remove(activityToDelete);
+            }
         }
     }
 }
