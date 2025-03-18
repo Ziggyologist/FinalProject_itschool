@@ -34,7 +34,9 @@ namespace Frontend
                 new Point(0, this.Height),
                 new Point(this.Width, this.Height)
             };
-            using (Brush brush = new SolidBrush(isGray ? Color.LightGray : Color.Green))
+            Color greenColor = ColorTranslator.FromHtml("#70a089");
+            Color grayColor = ColorTranslator.FromHtml("#c2c2c2");
+            using (Brush brush = new SolidBrush(isGray ? grayColor : greenColor))
             {
                 g.FillPolygon(brush, trianglePoints);
             }

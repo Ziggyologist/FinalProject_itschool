@@ -44,7 +44,9 @@ namespace Frontend
             // AddActivityBtn
             // 
             AddActivityBtn.Anchor = AnchorStyles.Top;
-            AddActivityBtn.BackColor = Color.LightGreen;
+            Color greenColor = ColorTranslator.FromHtml("#e3bfba");
+            AddActivityBtn.BackColor = greenColor;
+            AddActivityBtn.Cursor = Cursors.Hand;
             AddActivityBtn.Font = new Font("Arial", 20F, FontStyle.Bold);
             AddActivityBtn.ForeColor = Color.WhiteSmoke;
             AddActivityBtn.Location = new Point(342, 0);
@@ -57,13 +59,12 @@ namespace Frontend
             AddActivityBtn.TabIndex = 5;
             AddActivityBtn.Text = "+";
             AddActivityBtn.TextAlign = ContentAlignment.MiddleCenter;
-            AddActivityBtn.Cursor = Cursors.Hand;
             AddActivityBtn.Click += AddActivityBtn_Click;
-
             // 
             // panel1
             // 
-            panel1.BackColor = Color.LightGray;
+            Color redColor = ColorTranslator.FromHtml("#96645d");
+            panel1.BackColor = redColor;
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Bottom;
